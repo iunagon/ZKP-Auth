@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZKPAuth</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/css/utils.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Roboto:wght@100;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    {% if message %}
+        <script> let msg='{{message}}';</script>
+    {% endif %}
+    <div class="container mx-auto">
+        <header>
+            <nav class="flex justify-between">
+                <div class="font-bold flex items-center font-large">ZKPAuth</div>
+                <ul class="navbar flex items-center">
+                    {% if message==None %}
+                    <li><a class="links" href="index">Home</a> </li>                    
+                    <li><a class="links" href="login">Login</a></li>
+                    <li><a class="links" href="register">Sign-up</a></li>
+                    {% endif %}
+
+                    {% if message!=None %}
+                    <li>Logged in as {{message}} </li>
+                    <li><a class="links" href="index">Sign-out</a> </li>
+                    {% endif %}
+                </ul>
+            </nav>
+            <hr>
+        </header>
+        <main class="min-h-screen mx-auto" >
+            <section class="section1">
+                <div class="flex items-center">
+                    <div class="topleft flex flex-col justify-center px-1">
+                        <h1 class="my-1">ZKPAuth</h1>
+                        <p style="text-align:justify;">Password based authentication system is the most commonly used authentication system for most of the web applications in today’s world. This system uses cryptographic principles such as hashing making it difficult for the hackers to crack the passwords. These password hashes are often stored in a centralized database and hence are vulnerable to get stolen. Hackers can steal these hashes from the server on which they are stored and try to crack the passwords using methods such as Dictionary Attacks, Brute Force Attacks, Lookup Tables, Reverse Lookup Tables and Rainbow tables. To avoid this need to store sensitive information for authentication, we introduce the concept of zero knowledge proof.<br><br>
+	Zero knowledge proof (ZKP) is a type of proof in which one party (prover) proves another party (verifier) that he/she possess certain information without actually revealing any of the information.  With this we will be able to authenticate the user, without the need for them to reveal any sensitive information, in this case the password. So now, as even the server does not possess the hashes of the passwords or any information related to the passwords, the hackers will not be able to steal any sensitive information from it. Hence, improving the security of the authentication process.</p>
+                         </div>
+                    <div class="topright"></div>
+                </div>
+                
+            </section>
+            <hr>
+            <section>
+
+            </section>
+        </main>
+        <footer></footer>
+
+    </div>
+</body>
+</html>
